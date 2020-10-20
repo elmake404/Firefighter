@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField]
+    private Transform _aim, _posFair;
+    [SerializeField]
+    private Water _water;
+    [SerializeField]
+    private float _forseWater;
     void Start()
     {
-        
+        StartCoroutine(TurnOnTheWater()) ;
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        transform.LookAt(_aim.position);
+    }
+    private IEnumerator TurnOnTheWater()
+    {
+        while (true)
+        {
+            Water water = Instantiate(_water,_posFair.position,_water.transform.rotation);
+            water.AddForseWater(_forseWater, transform.forward);
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 }
