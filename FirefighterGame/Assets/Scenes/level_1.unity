@@ -287,6 +287,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Aim
       objectReference: {fileID: 0}
+    - target: {fileID: 6875601547340089092, guid: 2500d048c108e854290db7ff69d854f0,
+        type: 3}
+      propertyPath: _bottomLeftLimit.x
+      value: 21.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 6875601547340089092, guid: 2500d048c108e854290db7ff69d854f0,
+        type: 3}
+      propertyPath: _bottomLeftLimit.y
+      value: 7.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 6875601547340089092, guid: 2500d048c108e854290db7ff69d854f0,
+        type: 3}
+      propertyPath: _bottomLeftLimit.z
+      value: 24.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6875601547340089092, guid: 2500d048c108e854290db7ff69d854f0,
+        type: 3}
+      propertyPath: _topRightLimit.x
+      value: 8.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6875601547340089092, guid: 2500d048c108e854290db7ff69d854f0,
+        type: 3}
+      propertyPath: _topRightLimit.y
+      value: 31.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 6875601547340089092, guid: 2500d048c108e854290db7ff69d854f0,
+        type: 3}
+      propertyPath: _topRightLimit.z
+      value: 24.16
+      objectReference: {fileID: 0}
     - target: {fileID: 6875601547340089093, guid: 2500d048c108e854290db7ff69d854f0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -592,6 +622,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 774573737}
+  - component: {fileID: 774573738}
   m_Layer: 0
   m_Name: building
   m_TagString: Untagged
@@ -623,6 +654,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &774573738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774573736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3941f3080cea7c42a4d26463f15cf47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _topRightLimit: {x: -21.386322, y: -33.26, z: -22.610939}
+  _speed: 0.01
 --- !u!114 &904201520 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9007790662109154370, guid: eadd8c4c0413b8243a6eec4e3076e1ae,
@@ -1204,6 +1249,11 @@ PrefabInstance:
       propertyPath: _burningRooms.Array.data[8]
       value: 
       objectReference: {fileID: 662198027}
+    - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
+        type: 3}
+      propertyPath: _ArsonisNamber
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 59852185333339025, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
         type: 3}
       propertyPath: m_Name
