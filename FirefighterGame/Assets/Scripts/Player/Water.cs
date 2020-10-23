@@ -11,7 +11,7 @@ public class Water : MonoBehaviour
     private float _timeLife;
     private void Start()
     {
-        Destroy(gameObject,_timeLife);
+        Destroy(gameObject, _timeLife);
     }
     public void AddForseWater(float Forse,Vector3 direction)
     {

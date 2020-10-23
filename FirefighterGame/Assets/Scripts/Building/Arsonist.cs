@@ -35,4 +35,9 @@ public class Arsonist : MonoBehaviour
             }
         }
     }
+    [ContextMenu("SearchBurningRoom")]
+    private void SearchBurningRoom()
+    {
+        _burningRooms = FindObjectsOfType<BurningRoom>();
+    }
 }
