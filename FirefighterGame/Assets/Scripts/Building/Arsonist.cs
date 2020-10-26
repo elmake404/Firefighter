@@ -4,40 +4,135 @@ using UnityEngine;
 
 public class Arsonist : MonoBehaviour
 {
+    [System.Serializable]
+    private struct Floor
+    {
+        public Stage Stageobj;
+        public List<BurningRoom> NoBurningRooms;
+        public int ArsonisNamber;
+    }
+
     [SerializeField]
-    private BurningRoom[] _burningRooms;
+    private Floor[] _floors;
     [SerializeField]
-    private int _ArsonisNamber;
+    private bool[] _percentage = new bool[100];
+    [SerializeField]
+    private float _timeBeforeArson;
+    [SerializeField]
+    [Range(1, 100)]
+    private int _percentageOfFireInTheUpperRoom;
+    private int _numberFloor = int.MinValue;
+    private void Awake()
+    {
+        PercentSetting();
+        for (int i = 0; i < _floors.Length; i++)
+        {
+            _floors[i].Stageobj.Initialization(this, i);
+        }
+    }
     void Start()
     {
-        if (_ArsonisNamber>_burningRooms.Length)
-        {
-            Debug.LogError("request exceeds the number of rooms, maximum number of rooms " + _burningRooms.Length);
-        }
-
-        RandomArsonis();
+        StartCoroutine(RandomArsonis());
     }
 
     void Update()
     {
-        
-    }
-    private void RandomArsonis()
-    {
-        List <BurningRoom> ArsonisRooms = new List<BurningRoom>();
-        while (ArsonisRooms.Count<_ArsonisNamber)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            int namberRoom = Random.Range(0, _burningRooms.Length);
-            if (!ArsonisRooms.Contains(_burningRooms[namberRoom]))
+            _numberFloor++;
+        }
+    }
+    private IEnumerator RandomArsonis()
+    {
+
+        while (true)
+        {
+            if (LevelManager.IsStartGame&&_numberFloor>=0)
             {
-                ArsonisRooms.Add(_burningRooms[namberRoom]);
-                _burningRooms[namberRoom].ActivationFair();
+                int floorNumberVariation;
+                if (_percentage[Random.Range(0, _percentage.Length)] && (_numberFloor + 1) < _floors.Length)
+                {
+                    floorNumberVariation = _numberFloor + 1;
+                }
+                else
+                {
+                    floorNumberVariation = _numberFloor;
+                }
+
+                int numberRoom = 0;
+
+                if (_floors[floorNumberVariation].NoBurningRooms.Count > 0)
+                {
+                    numberRoom = Random.Range(0, _floors[floorNumberVariation].NoBurningRooms.Count);
+                }
+                else if (CheckFloor())
+                {
+                    yield return new WaitForSeconds(_timeBeforeArson);
+                    continue;
+                }
+                else
+                {
+                    continue;
+                }
+
+                _floors[floorNumberVariation].NoBurningRooms[numberRoom].ActivationFair();
+                _floors[floorNumberVariation].NoBurningRooms.Remove(_floors[floorNumberVariation].NoBurningRooms[numberRoom]);
+                yield return new WaitForSeconds(_timeBeforeArson);
+            }
+            else
+            {
+                yield return new WaitForSeconds(Time.fixedDeltaTime);
             }
         }
     }
     [ContextMenu("SearchBurningRoom")]
     private void SearchBurningRoom()
     {
-        _burningRooms = FindObjectsOfType<BurningRoom>();
+        for (int i = 0; i < _floors.Length; i++)
+        {
+            _floors[i].NoBurningRooms = new List<BurningRoom>();
+            for (int j = 0; j < _floors[i].Stageobj.transform.childCount; j++)
+            {
+                BurningRoom room = _floors[i].Stageobj.transform.GetChild(j).GetComponent<BurningRoom>();
+                if (room != null)
+                    _floors[i].NoBurningRooms.Add(room);
+            }
+        }
+    }
+    private bool CheckFloor()
+    {
+        int namber = _numberFloor;
+        if ((_numberFloor + 1) < _floors.Length)
+        {
+            namber++;
+        }
+        for (int i = _numberFloor; i < namber; i++)
+        {
+            if ((_floors[namber].NoBurningRooms.Count > 0))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    private void PercentSetting()
+    {
+        List<int> nambers = new List<int>();
+        for (int i = 0; i < 100; i++)
+        {
+            nambers.Add(i);
+        }
+        int quantity = 0;
+        while (quantity < _percentageOfFireInTheUpperRoom)
+        {
+            int i = nambers[Random.Range(0, nambers.Count)];
+            _percentage[i] = true;
+            nambers.Remove(i);
+            quantity++;
+        }
+    }
+    public void NextNumber(int numberFloor)
+    {
+        _numberFloor = numberFloor;
     }
 }
