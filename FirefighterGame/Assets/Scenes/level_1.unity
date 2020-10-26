@@ -673,7 +673,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 774573736}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 16.4, y: 19.1, z: 41.36}
+  m_LocalPosition: {x: 16.4, y: 18.3, z: 41.36}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1734013300}
@@ -701,7 +701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3941f3080cea7c42a4d26463f15cf47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _topRightLimit: {x: -21.386322, y: -33.26, z: -22.610939}
+  _topRightLimit: {x: 16.4, y: 0.8, z: 41.36}
   _speed: 0.01
 --- !u!114 &904201520 stripped
 MonoBehaviour:
@@ -845,6 +845,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1266596353}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1266596355 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4365460115766383460, guid: eadd8c4c0413b8243a6eec4e3076e1ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 1266596353}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3d61acc76f6c3d4bbb2f6942a254bb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1565474823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1067,6 +1079,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bld_Apartment_01
       objectReference: {fileID: 0}
+    - target: {fileID: 8739554871355695126, guid: eadd8c4c0413b8243a6eec4e3076e1ae,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eadd8c4c0413b8243a6eec4e3076e1ae, type: 3}
 --- !u!114 &1734013297 stripped
@@ -1111,6 +1128,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1734013296}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1734013301 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4365460115766383460, guid: eadd8c4c0413b8243a6eec4e3076e1ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 1734013296}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3d61acc76f6c3d4bbb2f6942a254bb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1877058566
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,6 +1152,7 @@ GameObject:
   - component: {fileID: 1877058568}
   - component: {fileID: 1877058567}
   - component: {fileID: 1877058570}
+  - component: {fileID: 1877058571}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1255,6 +1285,19 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!65 &1877058571
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877058566}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2029794641
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1396,6 +1439,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2029794641}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2029794646 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4365460115766383460, guid: eadd8c4c0413b8243a6eec4e3076e1ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 2029794641}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3d61acc76f6c3d4bbb2f6942a254bb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &59852185777895879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1426,6 +1481,21 @@ PrefabInstance:
     - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
         type: 3}
       propertyPath: _floors.Array.data[2].BurningRooms.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
+        type: 3}
+      propertyPath: _floors.Array.data[0].NoBurningRooms.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
+        type: 3}
+      propertyPath: _floors.Array.data[1].NoBurningRooms.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
+        type: 3}
+      propertyPath: _floors.Array.data[2].NoBurningRooms.Array.size
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
@@ -1553,6 +1623,76 @@ PrefabInstance:
       propertyPath: _floors.Array.data[2].ArsonisNamber
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
+        type: 3}
+      propertyPath: _floors.Array.data[0].NoBurningRooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 1734013297}
+    - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
+        type: 3}
+      propertyPath: _floors.Array.data[0].NoBurningRooms.Array.data[1]
+      value: 
+      objectReference: {fileID: 1734013298}
+    - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
+        type: 3}
+      propertyPath: _floors.Array.data[0].NoBurningRooms.Array.data[2]
+      value: 
+      objectReference: {fileID: 1734013299}
+    - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
+        type: 3}
+      propertyPath: _floors.Array.data[1].NoBurningRooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 2029794642}
+    - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
+        type: 3}
+      propertyPath: _floors.Array.data[1].NoBurningRooms.Array.data[1]
+      value: 
+      objectReference: {fileID: 2029794644}
+    - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
+        type: 3}
+      propertyPath: _floors.Array.data[1].NoBurningRooms.Array.data[2]
+      value: 
+      objectReference: {fileID: 2029794643}
+    - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
+        type: 3}
+      propertyPath: _floors.Array.data[2].NoBurningRooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 662198027}
+    - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
+        type: 3}
+      propertyPath: _floors.Array.data[2].NoBurningRooms.Array.data[1]
+      value: 
+      objectReference: {fileID: 904201520}
+    - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
+        type: 3}
+      propertyPath: _floors.Array.data[2].NoBurningRooms.Array.data[2]
+      value: 
+      objectReference: {fileID: 342165599}
+    - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
+        type: 3}
+      propertyPath: _percentageOfFireInTheUpperRoom
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
+        type: 3}
+      propertyPath: _timeBeforeArson
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
+        type: 3}
+      propertyPath: _floors.Array.data[0].Stageobj
+      value: 
+      objectReference: {fileID: 1734013301}
+    - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
+        type: 3}
+      propertyPath: _floors.Array.data[1].Stageobj
+      value: 
+      objectReference: {fileID: 2029794646}
+    - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
+        type: 3}
+      propertyPath: _floors.Array.data[2].Stageobj
+      value: 
+      objectReference: {fileID: 1266596355}
     - target: {fileID: 59852185333339025, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
         type: 3}
       propertyPath: m_Name
