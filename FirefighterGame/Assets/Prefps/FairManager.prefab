@@ -43,14 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cf86da31f9cb754c9654e67f13fbb90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _burningRooms:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _burningRooms: []
   _ArsonisNamber: 3

@@ -16,7 +16,10 @@ public class Lift : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.position = Vector3.MoveTowards(transform.position,_topRightLimit, _speed);   
+        if (LevelManager.IsStartGame)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, _topRightLimit, _speed);
+        }
     }
     [ContextMenu("RecordsTopRightLimit")]
     private void RecordsTopRightLimit()

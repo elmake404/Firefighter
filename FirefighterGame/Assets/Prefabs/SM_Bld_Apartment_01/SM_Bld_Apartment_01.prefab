@@ -177,6 +177,7 @@ MonoBehaviour:
   _colliderMain: {fileID: 4206827315604115678}
   _FbxSmoke: {fileID: 6864585762885208646}
   _fbxFire: {fileID: 3813399758587520562}
+  _fbxPressurisedSteam: {fileID: 6662711145775317964}
 --- !u!65 &4206827315604115678
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -304,6 +305,7 @@ MonoBehaviour:
   _colliderMain: {fileID: 2558383580131032129}
   _FbxSmoke: {fileID: 411810776452473178}
   _fbxFire: {fileID: 8690169476569615467}
+  _fbxPressurisedSteam: {fileID: 4668657317285911152}
 --- !u!65 &2558383580131032129
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -431,6 +433,7 @@ MonoBehaviour:
   _colliderMain: {fileID: 4001122450835823161}
   _FbxSmoke: {fileID: 4342689528589155694}
   _fbxFire: {fileID: 6926437580551791711}
+  _fbxPressurisedSteam: {fileID: 6908131073866445985}
 --- !u!65 &4001122450835823161
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1141,6 +1144,11 @@ PrefabInstance:
       propertyPath: simulationSpeed
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 198124144702787664, guid: 61bb62591466c3649bdf4905822d72f6,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 198985416474409296, guid: 61bb62591466c3649bdf4905822d72f6,
         type: 3}
       propertyPath: InitialModule.startLifetime.scalar
@@ -1163,6 +1171,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61bb62591466c3649bdf4905822d72f6, type: 3}
+--- !u!198 &4668657317285911152 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198124144702787664, guid: 61bb62591466c3649bdf4905822d72f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 4788883054874249760}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4790149830655065980 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4363000815121756, guid: 61bb62591466c3649bdf4905822d72f6,
@@ -1265,6 +1279,11 @@ PrefabInstance:
       propertyPath: simulationSpeed
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 198124144702787664, guid: 61bb62591466c3649bdf4905822d72f6,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 198985416474409296, guid: 61bb62591466c3649bdf4905822d72f6,
         type: 3}
       propertyPath: InitialModule.startLifetime.scalar
@@ -1287,6 +1306,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61bb62591466c3649bdf4905822d72f6, type: 3}
+--- !u!198 &6908131073866445985 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198124144702787664, guid: 61bb62591466c3649bdf4905822d72f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 6728795934699136241}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6732595983091814829 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4363000815121756, guid: 61bb62591466c3649bdf4905822d72f6,
@@ -1499,6 +1524,11 @@ PrefabInstance:
       propertyPath: simulationSpeed
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 198124144702787664, guid: 61bb62591466c3649bdf4905822d72f6,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 198985416474409296, guid: 61bb62591466c3649bdf4905822d72f6,
         type: 3}
       propertyPath: InitialModule.startLifetime.scalar
@@ -1524,6 +1554,12 @@ PrefabInstance:
 --- !u!4 &6829379535053792960 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4363000815121756, guid: 61bb62591466c3649bdf4905822d72f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 6830083358983803804}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &6662711145775317964 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198124144702787664, guid: 61bb62591466c3649bdf4905822d72f6,
     type: 3}
   m_PrefabInstance: {fileID: 6830083358983803804}
   m_PrefabAsset: {fileID: 0}

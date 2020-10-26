@@ -11,12 +11,11 @@ public class Hydrant : MonoBehaviour
     private Water _water;
 
     [SerializeField]
-    private float _forseWater, _factorDistance;
+    private float _forseWater, _factorDistance, _radiusFireplug;
     void Start()
     {
         _startPosAim = _aim.transform.position;
         _startPosHydrant = transform.position;
-
         StartCoroutine(TurnOnTheWater());
     }
     void FixedUpdate()
@@ -32,9 +31,13 @@ public class Hydrant : MonoBehaviour
     {
         while (true)
         {
-            Water water = Instantiate(_water, _posFair.position, _water.transform.rotation);
-            water.AddForseWater(_forseWater, transform.forward);
-            yield return new WaitForSeconds(0.1f);
+            if (LevelManager.IsStartGame)
+            {
+                Water water = Instantiate(_water, _posFair.position, _water.transform.rotation);
+                water.AddForseWater(_forseWater, transform.forward);
+            }
+                yield return new WaitForSeconds(0.1f);
         }
     }
+
 }

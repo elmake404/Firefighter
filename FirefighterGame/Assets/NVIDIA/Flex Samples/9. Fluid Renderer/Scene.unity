@@ -643,7 +643,7 @@ MonoBehaviour:
   m_selfCollideFilter: 0
   m_fluid: 1
   m_massScale: 1
-  m_drawParticles: 0
+  m_drawParticles: 1
   m_recreateActor: 0
   m_asset: {fileID: 11400000, guid: 52b89f0480d9eb94d84d0188bdf2387b, type: 2}
   m_lifeTime: 2
@@ -670,7 +670,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1811417466}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50727fb552f09d84fbbb274bb86a2e2e, type: 3}
   m_Name: 
