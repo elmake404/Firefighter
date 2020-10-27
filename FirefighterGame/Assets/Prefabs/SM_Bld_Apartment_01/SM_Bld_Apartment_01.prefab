@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02a118e719b6e4a42a0ce18da90d82f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mainStage: {fileID: 4365460115766383460}
   _window: {fileID: 8284947567434336528}
   _colliderMain: {fileID: 4206827315604115678}
   _FbxSmoke: {fileID: 6864585762885208646}
@@ -429,6 +430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02a118e719b6e4a42a0ce18da90d82f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mainStage: {fileID: 4365460115766383460}
   _window: {fileID: 3227714892623686702}
   _colliderMain: {fileID: 2558383580131032129}
   _FbxSmoke: {fileID: 411810776452473178}
@@ -557,6 +559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02a118e719b6e4a42a0ce18da90d82f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mainStage: {fileID: 4365460115766383460}
   _window: {fileID: 6403021138254881368}
   _colliderMain: {fileID: 4001122450835823161}
   _FbxSmoke: {fileID: 4342689528589155694}
@@ -726,7 +729,7 @@ GameObject:
   - component: {fileID: 4365460115766383460}
   - component: {fileID: 3948991957434612756}
   - component: {fileID: 5191383350945553429}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SM_Bld_Apartment_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -775,8 +778,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3d61acc76f6c3d4bbb2f6942a254bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _arsonist: {fileID: 0}
-  _numberFloor: 0
+  ArsonisNamber: 0
+  NumberBurningRooms: 0
 --- !u!54 &3948991957434612756
 Rigidbody:
   m_ObjectHideFlags: 0

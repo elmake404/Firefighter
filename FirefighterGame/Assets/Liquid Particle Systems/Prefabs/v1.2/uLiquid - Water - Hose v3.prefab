@@ -266,8 +266,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.26
-      minScalar: 0.34
+      scalar: 0.78
+      minScalar: 1.02
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4763,7 +4763,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4798,7 +4798,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 7.97
+      scalar: 20
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -8078,7 +8078,7 @@ ParticleSystem:
   CollisionModule:
     enabled: 1
     serializedVersion: 3
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -8254,7 +8254,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 7991
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -9565,8 +9565,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 3.0000002
-      minScalar: 4.69
+      scalar: 9
+      minScalar: 14.07
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -9812,7 +9812,7 @@ ParticleSystem:
     startRotation:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 62.831852
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2

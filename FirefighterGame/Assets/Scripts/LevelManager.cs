@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    public static bool IsStartGame;
+#region Static
+    public static bool IsStartGame,IsBurning,IsWinGame;
+    public static Vector3 BottomLeftLimit, TopRightLimit;
+#endregion
     private void Awake()
     {
+        IsWinGame = false;
+        IsBurning = false;
         IsStartGame = false;
     }
     private void Start()
@@ -16,6 +21,6 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
-
+        //Debug.Log();
     }
 }
