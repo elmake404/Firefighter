@@ -198,6 +198,61 @@ PrefabInstance:
       propertyPath: m_massScale
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8128860142996390104, guid: 9dd7d2bda6d7f7b41b78e9e8cf99a368,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128860142996390110, guid: 9dd7d2bda6d7f7b41b78e9e8cf99a368,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.599893
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128860142996390110, guid: 9dd7d2bda6d7f7b41b78e9e8cf99a368,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128860142996390110, guid: 9dd7d2bda6d7f7b41b78e9e8cf99a368,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.882514
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128860142996692216, guid: 9dd7d2bda6d7f7b41b78e9e8cf99a368,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128860142996692222, guid: 9dd7d2bda6d7f7b41b78e9e8cf99a368,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128860143011595678, guid: 9dd7d2bda6d7f7b41b78e9e8cf99a368,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128860143011595678, guid: 9dd7d2bda6d7f7b41b78e9e8cf99a368,
+        type: 3}
+      propertyPath: ForceModule.y.minScalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128860143011595678, guid: 9dd7d2bda6d7f7b41b78e9e8cf99a368,
+        type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128860143011595678, guid: 9dd7d2bda6d7f7b41b78e9e8cf99a368,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128860143011595678, guid: 9dd7d2bda6d7f7b41b78e9e8cf99a368,
+        type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dd7d2bda6d7f7b41b78e9e8cf99a368, type: 3}
 --- !u!1001 &123883638
@@ -496,7 +551,7 @@ PrefabInstance:
     - target: {fileID: 3553159108954428115, guid: e3755d45a42cd03468927b722cc07d85,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4180620074427369577, guid: e3755d45a42cd03468927b722cc07d85,
         type: 3}
@@ -702,7 +757,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _topRightLimit: {x: 16.4, y: 0.8, z: 41.36}
-  _speed: 0.01
+  _speedNotBurning: 0.05
+  _speedBurning: 0.005
 --- !u!114 &904201520 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9007790662109154370, guid: eadd8c4c0413b8243a6eec4e3076e1ae,
@@ -1465,11 +1521,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
         type: 3}
-      propertyPath: _floors.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
-        type: 3}
       propertyPath: _floors.Array.data[0].BurningRooms.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -1481,21 +1532,6 @@ PrefabInstance:
     - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
         type: 3}
       propertyPath: _floors.Array.data[2].BurningRooms.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
-        type: 3}
-      propertyPath: _floors.Array.data[0].NoBurningRooms.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
-        type: 3}
-      propertyPath: _floors.Array.data[1].NoBurningRooms.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
-        type: 3}
-      propertyPath: _floors.Array.data[2].NoBurningRooms.Array.size
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
@@ -1610,21 +1646,6 @@ PrefabInstance:
       objectReference: {fileID: 342165599}
     - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
         type: 3}
-      propertyPath: _floors.Array.data[0].ArsonisNamber
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
-        type: 3}
-      propertyPath: _floors.Array.data[1].ArsonisNamber
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
-        type: 3}
-      propertyPath: _floors.Array.data[2].ArsonisNamber
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
-        type: 3}
       propertyPath: _floors.Array.data[0].NoBurningRooms.Array.data[0]
       value: 
       objectReference: {fileID: 1734013297}
@@ -1676,7 +1697,7 @@ PrefabInstance:
     - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
         type: 3}
       propertyPath: _timeBeforeArson
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
         type: 3}
@@ -1693,6 +1714,11 @@ PrefabInstance:
       propertyPath: _floors.Array.data[2].Stageobj
       value: 
       objectReference: {fileID: 1266596355}
+    - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
+        type: 3}
+      propertyPath: _arsonisNamber
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 59852185333339025, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
         type: 3}
       propertyPath: m_Name

@@ -43,5 +43,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cf86da31f9cb754c9654e67f13fbb90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _burningRooms: []
-  _ArsonisNamber: 3
+  _floors:
+  - Stageobj: {fileID: 0}
+    NoBurningRooms:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    ArsonisNamber: 0
+  - Stageobj: {fileID: 0}
+    NoBurningRooms:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    ArsonisNamber: 0
+  - Stageobj: {fileID: 0}
+    NoBurningRooms:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    ArsonisNamber: 0
+  _percentage: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  _timeBeforeArson: 0
+  _arsonisNamber: 0
+  _percentageOfFireInTheUpperRoom: 0

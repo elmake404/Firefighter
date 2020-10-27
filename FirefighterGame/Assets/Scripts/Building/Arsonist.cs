@@ -9,6 +9,7 @@ public class Arsonist : MonoBehaviour
     {
         public Stage Stageobj;
         public List<BurningRoom> NoBurningRooms;
+        //[HideInInspector]
         public int ArsonisNamber;
     }
 
@@ -19,23 +20,22 @@ public class Arsonist : MonoBehaviour
     [SerializeField]
     private float _timeBeforeArson;
     [SerializeField]
+    private int _arsonisNamber;
+    [SerializeField]
     [Range(1, 100)]
     private int _percentageOfFireInTheUpperRoom;
     private int _numberFloor = int.MinValue;
     private void Awake()
     {
         PercentSetting();
-        for (int i = 0; i < _floors.Length; i++)
-        {
-            _floors[i].Stageobj.Initialization(this, i);
-        }
+        InitializationFloor();
     }
-    void Start()
+    private void Start()
     {
         StartCoroutine(RandomArsonis());
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -44,10 +44,9 @@ public class Arsonist : MonoBehaviour
     }
     private IEnumerator RandomArsonis()
     {
-
         while (true)
         {
-            if (LevelManager.IsStartGame&&_numberFloor>=0)
+            if (LevelManager.IsStartGame && _numberFloor >= 0)
             {
                 int floorNumberVariation;
                 if (_percentage[Random.Range(0, _percentage.Length)] && (_numberFloor + 1) < _floors.Length)
@@ -61,8 +60,12 @@ public class Arsonist : MonoBehaviour
 
                 int numberRoom = 0;
 
-                if (_floors[floorNumberVariation].NoBurningRooms.Count > 0)
+                if (_floors[floorNumberVariation].NoBurningRooms.Count > 0
+                    && _floors[floorNumberVariation].ArsonisNamber > 0)
                 {
+                    _floors[floorNumberVariation].ArsonisNamber--;
+                    _floors[floorNumberVariation].Stageobj.NumberBurningRooms++;
+                    _floors[floorNumberVariation].Stageobj.ArsonisNamber--;
                     numberRoom = Random.Range(0, _floors[floorNumberVariation].NoBurningRooms.Count);
                 }
                 else if (CheckFloor())
@@ -108,7 +111,7 @@ public class Arsonist : MonoBehaviour
         }
         for (int i = _numberFloor; i < namber; i++)
         {
-            if ((_floors[namber].NoBurningRooms.Count > 0))
+            if ((_floors[namber].NoBurningRooms.Count > 0) && _floors[namber].ArsonisNamber > 0)
             {
                 return false;
             }
@@ -130,6 +133,37 @@ public class Arsonist : MonoBehaviour
             nambers.Remove(i);
             quantity++;
         }
+    }
+    private void InitializationFloor()
+    {
+        int number = _arsonisNamber;
+        int MaxNumber = 0;
+
+        for (int i = 0; i < _floors.Length; i++)
+        {
+            _floors[i].ArsonisNamber = 1;
+            MaxNumber += _floors[i].NoBurningRooms.Count - 1;
+            number--;
+        }
+
+        number = number <= MaxNumber ? number : MaxNumber;
+
+        while (number > 0)
+        {
+            int i = Random.Range(0, _floors.Length);
+            if (_floors[i].NoBurningRooms.Count > _floors[i].ArsonisNamber)
+            {
+                _floors[i].ArsonisNamber++;
+                number--;
+            }
+        }
+
+        for (int i = 0; i < _floors.Length; i++)
+        {
+            _floors[i].Stageobj.Initialization(this, i, _floors[i].ArsonisNamber);
+        }
+        _floors[_floors.Length - 1].Stageobj.IsLast = true;
+
     }
     public void NextNumber(int numberFloor)
     {

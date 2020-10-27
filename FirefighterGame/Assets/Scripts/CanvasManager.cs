@@ -20,5 +20,10 @@ public class CanvasManager : MonoBehaviour
         {
             _gameUI.SetActive(true);
         }
+        if (LevelManager.IsWinGame && !_winUi.activeSelf)
+        {
+            _gameUI.SetActive(false);
+            _winUi.SetActive(true);
+        }
     }
 }

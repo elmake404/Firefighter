@@ -8,6 +8,8 @@ public class Hydrant : MonoBehaviour
     [SerializeField]
     private Transform _aim, _posFair;
     [SerializeField]
+    private ParticleSystem _FbxWater;
+    [SerializeField]
     private Water _water;
 
     [SerializeField]
@@ -20,6 +22,16 @@ public class Hydrant : MonoBehaviour
     }
     void FixedUpdate()
     {
+        if (LevelManager.IsStartGame&&!_FbxWater.isPlaying)
+        {
+            _FbxWater.Play();
+        }
+        else if (LevelManager.IsWinGame && _FbxWater.isPlaying)
+        {
+            _FbxWater.Stop();
+
+        }
+
         float posX = (_startPosAim.x - _aim.transform.position.x) * _factorDistance;
         Vector3 pos = new Vector3(_startPosHydrant.x + posX, _startPosHydrant.y, transform.position.z);
 
