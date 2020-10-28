@@ -51,4 +51,11 @@ public class BurningRoom : MonoBehaviour
         yield return new WaitForSeconds(5);
         _fbxPressurisedSteam.Stop();
     }
+    [ContextMenu("SearchComponent")]
+    private void SearchComponent()
+    {
+        _colliderMain = GetComponent<Collider>();
+        _window = GetComponent<MeshRenderer>();
+        _mainStage = GetComponentInParent<Stage>();
+    }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8260960908303150632}
   - component: {fileID: 4975087497328664973}
   - component: {fileID: 7129190452725798215}
+  - component: {fileID: 7123026491423799620}
   m_Layer: 0
   m_Name: SM_Bld_OfficeOld_Small_Roof_01
   m_TagString: Untagged
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &7123026491423799620
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8786246353886672018}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.111203074, y: 0.056288008, z: 0.11199718}
+  m_Center: {x: -0.050462835, y: 0.028144004, z: -0.0503813}

@@ -9,7 +9,7 @@ public class Arsonist : MonoBehaviour
     {
         public Stage Stageobj;
         public List<BurningRoom> NoBurningRooms;
-        //[HideInInspector]
+        [HideInInspector]
         public int ArsonisNamber;
     }
 
@@ -23,7 +23,7 @@ public class Arsonist : MonoBehaviour
     private int _arsonisNamber;
     [SerializeField]
     [Range(1, 100)]
-    private int _percentageOfFireInTheUpperRoom;
+    private int _percentageOfFireInTheUpperRoom = 20;
     private int _numberFloor = int.MinValue;
     private void Awake()
     {
@@ -51,7 +51,7 @@ public class Arsonist : MonoBehaviour
                 int floorNumberVariation;
                 if (_percentage[Random.Range(0, _percentage.Length)] && (_numberFloor + 1) < _floors.Length)
                 {
-                    floorNumberVariation = _numberFloor + 1;
+                    floorNumberVariation = _numberFloor + 1;                    
                 }
                 else
                 {
@@ -75,6 +75,7 @@ public class Arsonist : MonoBehaviour
                 }
                 else
                 {
+                    yield return new WaitForSeconds(Time.fixedDeltaTime);
                     continue;
                 }
 

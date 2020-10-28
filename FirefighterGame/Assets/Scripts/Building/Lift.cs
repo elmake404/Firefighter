@@ -7,7 +7,7 @@ public class Lift : MonoBehaviour
     [SerializeField]
     private Vector3  _topRightLimit;
     [SerializeField]
-    private float _speedNotBurning, _speedBurning;
+    private float _speedNotBurning= 0.05f, _speedBurning= 0.005f;
     private float _speed;
     void Start()
     {

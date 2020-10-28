@@ -142,6 +142,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: uLiquid - Water - Hose v3
       objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: e9462f2fe8b922e4ebf560c85422ffbc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: e9462f2fe8b922e4ebf560c85422ffbc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
