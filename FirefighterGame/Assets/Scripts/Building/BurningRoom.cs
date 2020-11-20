@@ -39,7 +39,7 @@ public class BurningRoom : MonoBehaviour
     }
     public void PutOut()
     {
-        _mainStage.NumberBurningRooms--;
+        _mainStage.ArsonisNamber--;
         _colliderMain.enabled = false;
         _fbxFire.Stop();
         _FbxSmoke.Stop();

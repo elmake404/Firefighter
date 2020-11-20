@@ -4,32 +4,31 @@ using UnityEngine;
 
 public class Lift : MonoBehaviour
 {
+    private Vector3  _target;
     [SerializeField]
-    private Vector3  _topRightLimit;
+    private List<Transform> _targetLest = new List<Transform>();
     [SerializeField]
     private float _speedNotBurning= 0.05f, _speedBurning= 0.005f;
     private float _speed;
     void Start()
     {
-        _speed = _speedBurning;
+        _speed = _speedNotBurning;
     }
 
     void FixedUpdate()
     {
         if (LevelManager.IsStartGame)
         {
-            if (LevelManager.IsBurning)
-                _speed = Mathf.Lerp(_speed,_speedBurning,0.1f);
-            else
-                _speed = Mathf.Lerp(_speed, _speedNotBurning, 0.1f);
-
-            transform.position = Vector3.MoveTowards(transform.position, _topRightLimit, _speed);
+            transform.position = Vector3.MoveTowards(transform.position, _target, _speed);
         }
     }
-    [ContextMenu("RecordsTopRightLimit")]
-    private void RecordsTopRightLimit()
+    public void NewTargetMoving()
     {
-        _topRightLimit = transform.position;
+        _target = transform.position;
+        _target.y += (Camera.main.transform.position.y - _targetLest[LevelManager.NamberStage].position.y);
     }
-
+    public void AddTargets(Transform target)
+    {
+        _targetLest.Add(target);
+    }
 }

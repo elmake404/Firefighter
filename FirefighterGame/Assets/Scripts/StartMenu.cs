@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class StartMenu : MonoBehaviour
 {
-
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
             LevelManager.IsStartGame = true;
             gameObject.SetActive(false);
+            Arsonist.ArsonistMain.ActivationLift();
         }
     }
 }

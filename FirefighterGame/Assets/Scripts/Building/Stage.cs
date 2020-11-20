@@ -4,43 +4,36 @@ using UnityEngine;
 
 public class Stage : MonoBehaviour
 {
+    public Transform CenterFloor;
     private Arsonist _arsonist;
     private int _numberFloor;
     private bool _isActive;
 
-    [HideInInspector]
-    public int ArsonisNamber, NumberBurningRooms;
+    //[HideInInspector]
+    public int ArsonisNamber;
     public bool IsLast;
 
     private void FixedUpdate()
     {
-        if (_isActive&&!LevelManager.IsBurning)
+        if (ArsonisNamber <= 0 )
         {
-            LevelManager.IsBurning = true;
-        }
-        if (ArsonisNamber<=0&&NumberBurningRooms<=0)
-        {
-            LevelManager.IsBurning = false;
             enabled = false;
             if (IsLast)
             {
                 LevelManager.IsWinGame = true;
                 LevelManager.IsStartGame = false;
             }
+            else
+            {
+                LevelManager.NamberStage++;
+                _arsonist.ActivationLift();
+            }
         }
     }
-    public void Initialization(Arsonist arsonist,int number, int arsonisNamber)
+    public void Initialization(Arsonist arsonist, int number, int arsonisNamber)
     {
         _numberFloor = number;
         _arsonist = arsonist;
         ArsonisNamber = arsonisNamber;
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "MainCamera")
-        {
-            _isActive = true;
-            _arsonist.NextNumber(_numberFloor);
-        }
     }
 }

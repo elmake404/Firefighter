@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Arsonist : MonoBehaviour
 {
+    public static Arsonist ArsonistMain;
     [System.Serializable]
     private struct Floor
     {
@@ -12,9 +13,12 @@ public class Arsonist : MonoBehaviour
         [HideInInspector]
         public int ArsonisNamber;
     }
-
+    private Dictionary<int, List<BurningRoom>> _arsonDictionary = new Dictionary<int, List<BurningRoom>>();
     [SerializeField]
     private Floor[] _floors;
+    [SerializeField]
+    private Lift _lift;
+
     [SerializeField]
     private bool[] _percentage = new bool[100];
     [SerializeField]
@@ -24,69 +28,25 @@ public class Arsonist : MonoBehaviour
     [SerializeField]
     [Range(1, 100)]
     private int _percentageOfFireInTheUpperRoom = 20;
-    private int _numberFloor = int.MinValue;
     private void Awake()
     {
+        ArsonistMain = this;
         PercentSetting();
         InitializationFloor();
     }
     private void Start()
     {
-        StartCoroutine(RandomArsonis());
+        //ActivationLift();
     }
 
-    private void Update()
+    private IEnumerator ActivationArsonis()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        yield return new WaitForSeconds(_timeBeforeArson);
+
+        for (int i = 0; i < _arsonDictionary[LevelManager.NamberStage].Count; i++)
         {
-            _numberFloor++;
-        }
-    }
-    private IEnumerator RandomArsonis()
-    {
-        while (true)
-        {
-            if (LevelManager.IsStartGame && _numberFloor >= 0)
-            {
-                int floorNumberVariation;
-                if (_percentage[Random.Range(0, _percentage.Length)] && (_numberFloor + 1) < _floors.Length)
-                {
-                    floorNumberVariation = _numberFloor + 1;                    
-                }
-                else
-                {
-                    floorNumberVariation = _numberFloor;
-                }
-
-                int numberRoom = 0;
-
-                if (_floors[floorNumberVariation].NoBurningRooms.Count > 0
-                    && _floors[floorNumberVariation].ArsonisNamber > 0)
-                {
-                    _floors[floorNumberVariation].ArsonisNamber--;
-                    _floors[floorNumberVariation].Stageobj.NumberBurningRooms++;
-                    _floors[floorNumberVariation].Stageobj.ArsonisNamber--;
-                    numberRoom = Random.Range(0, _floors[floorNumberVariation].NoBurningRooms.Count);
-                }
-                else if (CheckFloor())
-                {
-                    yield return new WaitForSeconds(_timeBeforeArson);
-                    continue;
-                }
-                else
-                {
-                    yield return new WaitForSeconds(Time.fixedDeltaTime);
-                    continue;
-                }
-
-                _floors[floorNumberVariation].NoBurningRooms[numberRoom].ActivationFair();
-                _floors[floorNumberVariation].NoBurningRooms.Remove(_floors[floorNumberVariation].NoBurningRooms[numberRoom]);
-                yield return new WaitForSeconds(_timeBeforeArson);
-            }
-            else
-            {
-                yield return new WaitForSeconds(Time.fixedDeltaTime);
-            }
+            _arsonDictionary[LevelManager.NamberStage][i].ActivationFair();
+            yield return new WaitForSeconds(_timeBeforeArson);
         }
     }
     [ContextMenu("SearchBurningRoom")]
@@ -95,6 +55,8 @@ public class Arsonist : MonoBehaviour
         for (int i = 0; i < _floors.Length; i++)
         {
             _floors[i].NoBurningRooms = new List<BurningRoom>();
+            _lift.AddTargets(_floors[i].Stageobj.CenterFloor);
+
             for (int j = 0; j < _floors[i].Stageobj.transform.childCount; j++)
             {
                 BurningRoom room = _floors[i].Stageobj.transform.GetChild(j).GetComponent<BurningRoom>();
@@ -102,22 +64,6 @@ public class Arsonist : MonoBehaviour
                     _floors[i].NoBurningRooms.Add(room);
             }
         }
-    }
-    private bool CheckFloor()
-    {
-        int namber = _numberFloor;
-        if ((_numberFloor + 1) < _floors.Length)
-        {
-            namber++;
-        }
-        for (int i = _numberFloor; i < namber; i++)
-        {
-            if ((_floors[namber].NoBurningRooms.Count > 0) && _floors[namber].ArsonisNamber > 0)
-            {
-                return false;
-            }
-        }
-        return true;
     }
     private void PercentSetting()
     {
@@ -135,6 +81,13 @@ public class Arsonist : MonoBehaviour
             quantity++;
         }
     }
+    private BurningRoom RandomRoom(int namberFloor)
+    {
+        int count = _floors[namberFloor].NoBurningRooms.Count;
+        BurningRoom room = _floors[namberFloor].NoBurningRooms[Random.Range(0, count)];
+        _floors[namberFloor].NoBurningRooms.Remove(room);
+        return room;
+    }
     private void InitializationFloor()
     {
         int number = _arsonisNamber;
@@ -143,7 +96,9 @@ public class Arsonist : MonoBehaviour
         for (int i = 0; i < _floors.Length; i++)
         {
             _floors[i].ArsonisNamber = 1;
-            MaxNumber += _floors[i].NoBurningRooms.Count - 1;
+            _arsonDictionary[i] = new List<BurningRoom>();
+            _arsonDictionary[i].Add(RandomRoom(i));
+            MaxNumber += _floors[i].NoBurningRooms.Count;
             number--;
         }
 
@@ -152,8 +107,9 @@ public class Arsonist : MonoBehaviour
         while (number > 0)
         {
             int i = Random.Range(0, _floors.Length);
-            if (_floors[i].NoBurningRooms.Count > _floors[i].ArsonisNamber)
+            if (_floors[i].NoBurningRooms.Count > 0)
             {
+                _arsonDictionary[i].Add(RandomRoom(i));
                 _floors[i].ArsonisNamber++;
                 number--;
             }
@@ -164,10 +120,10 @@ public class Arsonist : MonoBehaviour
             _floors[i].Stageobj.Initialization(this, i, _floors[i].ArsonisNamber);
         }
         _floors[_floors.Length - 1].Stageobj.IsLast = true;
-
     }
-    public void NextNumber(int numberFloor)
+    public void ActivationLift()
     {
-        _numberFloor = numberFloor;
+        _lift.NewTargetMoving();
+        StartCoroutine(ActivationArsonis());
     }
 }
