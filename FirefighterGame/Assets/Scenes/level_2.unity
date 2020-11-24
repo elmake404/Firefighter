@@ -121,6 +121,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &90146278 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5773670671913387824, guid: 760d15161c5da2c42af13021d304e8d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1652589516534942380}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &123121744 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5773670671913387824, guid: 760d15161c5da2c42af13021d304e8d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 235742059}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &123653544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -474,6 +486,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02a118e719b6e4a42a0ce18da90d82f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &326075850 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5773670671913387824, guid: 760d15161c5da2c42af13021d304e8d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 123653544}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &534308363
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -840,6 +858,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02a118e719b6e4a42a0ce18da90d82f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1054662955 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5773670671913387824, guid: 760d15161c5da2c42af13021d304e8d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 757729522}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1130664130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1464,6 +1488,11 @@ PrefabInstance:
       propertyPath: _lift
       value: 
       objectReference: {fileID: 1716731324}
+    - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
+        type: 3}
+      propertyPath: _stupidInhabitants
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 59852185333339025, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
         type: 3}
       propertyPath: m_Name
@@ -1582,7 +1611,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3941f3080cea7c42a4d26463f15cf47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetLest: []
+  _targetLest:
+  - {fileID: 90146278}
+  - {fileID: 123121744}
+  - {fileID: 326075850}
+  - {fileID: 1054662955}
   _speedNotBurning: 0.05
   _speedBurning: 0.005
 --- !u!114 &1822101685 stripped
