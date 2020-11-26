@@ -29,6 +29,8 @@ public class Inhabitant : MonoBehaviour
             if (_meshRenderer.material.color == new Color(1, 0, 0))
             {
                 Debug.Log("red");
+                LevelManager.MaximumNumberOfDeadInhabitants--;
+                Debug.Log(LevelManager.MaximumNumberOfDeadInhabitants);
                 _isAlive = false;
             }
         }
