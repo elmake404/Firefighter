@@ -5,24 +5,29 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     #region Static
-    public static int NamberStage;
-    public static bool IsStartGame,IsWinGame;
+    public static int NamberStage, MaximumNumberOfDeadInhabitants;
+    public static bool IsStartGame, IsWinGame, IsLoseGame;
 
     public static Vector3 BottomLeftLimit, TopRightLimit;
-#endregion
+    #endregion
     private void Awake()
     {
         NamberStage = 0;
         IsWinGame = false;
         IsStartGame = false;
+        IsLoseGame = false;
     }
     private void Start()
     {
 
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        //Debug.Log();
+        if (MaximumNumberOfDeadInhabitants <= 0 && !IsLoseGame)
+        {
+            IsLoseGame = true;
+            IsStartGame = false;
+        }
     }
 }

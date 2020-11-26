@@ -22,15 +22,14 @@ public class Hydrant : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (LevelManager.IsStartGame&&!_FbxWater.isPlaying)
+        if (LevelManager.IsStartGame && !_FbxWater.isPlaying)
         {
             _FbxWater.Play();
         }
-        else if (LevelManager.IsWinGame && _FbxWater.isPlaying)
-        {
-            _FbxWater.Stop();
+        //else if (LevelManager.IsWinGame && _FbxWater.isPlaying)
+        //{
 
-        }
+        //}
 
         float posX = (_startPosAim.x - _aim.transform.position.x) * _factorDistance;
         Vector3 pos = new Vector3(_startPosHydrant.x + posX, _startPosHydrant.y, transform.position.z);
@@ -48,7 +47,14 @@ public class Hydrant : MonoBehaviour
                 Water water = Instantiate(_water, _posFair.position, _water.transform.rotation);
                 water.AddForseWater(_forseWater, transform.forward);
             }
-                yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.1f);
+
+            if (LevelManager.IsLoseGame || LevelManager.IsWinGame)
+            {
+                _FbxWater.Stop();
+
+                break;
+            }
         }
     }
 

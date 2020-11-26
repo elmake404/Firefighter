@@ -39,6 +39,7 @@ public class BurningRoom : MonoBehaviour
             _fbxFire.transform.localScale -= new Vector3(_decayRate, _decayRate, _decayRate);
             _burningBar.fillAmount -= _decayRate;
             _firePower--;
+
             if (_firePower <= 0)
             {
                 _inhabitant.Saved();

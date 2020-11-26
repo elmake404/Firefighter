@@ -35,12 +35,11 @@ public class CanvasManager : MonoBehaviour
         if (_numberStars < _receivedStars)
         {
             _numberStars += 0.05f;
-            
+
             _stars[_namberArreySrars].fillAmount += 0.05f;
-            if (_stars[_namberArreySrars].fillAmount>=1&&_namberArreySrars<_stars.Length-1)
+            if (_stars[_namberArreySrars].fillAmount >= 1 && _namberArreySrars < _stars.Length - 1)
             {
                 _namberArreySrars++;
-                Debug.Log(_namberArreySrars);
             }
         }
     }
@@ -54,6 +53,11 @@ public class CanvasManager : MonoBehaviour
         {
             _gameUI.SetActive(false);
             _winUi.SetActive(true);
+        }
+        if (LevelManager.IsLoseGame && !_lostUI.activeSelf)
+        {
+            _gameUI.SetActive(false);
+            _lostUI.SetActive(true);
         }
     }
     public void InitializationStars(int numberInhabitant)

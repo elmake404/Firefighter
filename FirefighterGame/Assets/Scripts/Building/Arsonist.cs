@@ -19,26 +19,19 @@ public class Arsonist : MonoBehaviour
     [SerializeField]
     private Lift _lift;
 
-    //[SerializeField]
-    //private bool[] _percentage = new bool[100];
     [SerializeField]
     private float _timeBeforeArson;
     [SerializeField]
     private int _arsonisNamber, _stupidInhabitants;
-    [SerializeField]
-    [Range(1, 100)]
-    private int _percentageOfFireInTheUpperRoom = 20;
     private void Awake()
     {
+        LevelManager.MaximumNumberOfDeadInhabitants = _stupidInhabitants;
         ArsonistMain = this;
-        //PercentSetting();
     }
     private void Start()
     {
         InitializationFloor();
-        //ActivationLift();
     }
-
     private IEnumerator ActivationArsonis()
     {
         yield return new WaitForSeconds(_timeBeforeArson);
@@ -65,22 +58,6 @@ public class Arsonist : MonoBehaviour
             }
         }
     }
-    //private void PercentSetting()
-    //{
-    //    List<int> nambers = new List<int>();
-    //    for (int i = 0; i < 100; i++)
-    //    {
-    //        nambers.Add(i);
-    //    }
-    //    int quantity = 0;
-    //    while (quantity < _percentageOfFireInTheUpperRoom)
-    //    {
-    //        int i = nambers[Random.Range(0, nambers.Count)];
-    //        _percentage[i] = true;
-    //        nambers.Remove(i);
-    //        quantity++;
-    //    }
-    //}
     private BurningRoom RandomRoom(int namberFloor)
     {
         int count = _floors[namberFloor].NoBurningRooms.Count;
@@ -90,7 +67,7 @@ public class Arsonist : MonoBehaviour
     }
     private void InitializationFloor()
     {
-        int arsonisNumber = _arsonisNamber>= _floors.Length? _arsonisNamber: _floors.Length;
+        int arsonisNumber = _arsonisNamber >= _floors.Length ? _arsonisNamber : _floors.Length;
 
         int stupidInhabitants = _stupidInhabitants;
         int MaxNumber = 0;
@@ -102,7 +79,7 @@ public class Arsonist : MonoBehaviour
             _arsonDictionary[i] = new List<BurningRoom>();
             _arsonDictionary[i].Add(RandomRoom(i));
             MaxNumber += _floors[i].NoBurningRooms.Count;
-            MaxNamberStupid ++;
+            MaxNamberStupid++;
             arsonisNumber--;
         }
 
@@ -111,7 +88,7 @@ public class Arsonist : MonoBehaviour
         MaxNamberStupid += arsonisNumber;
 
         stupidInhabitants = stupidInhabitants <= MaxNamberStupid ? stupidInhabitants : MaxNamberStupid;
-        //
+
         CanvasManager.CanvasManagerMain.InitializationStars(stupidInhabitants);
 
         while (arsonisNumber > 0)
@@ -135,7 +112,6 @@ public class Arsonist : MonoBehaviour
             {
                 _arsonDictionary[i][j].IsThereIsAResident = true;
                 selectedInhabitants.Add(_arsonDictionary[i][j]);
-                //Debug.Log(i + " " + j);
                 stupidInhabitants--;
             }
         }
