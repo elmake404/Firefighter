@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BurningRoom : MonoBehaviour
 {
+    [SerializeField]
+    private Image _burningBar;
+    [SerializeField]
+    private Inhabitant _inhabitant;
     [SerializeField]
     private Stage _mainStage;
     [SerializeField]
@@ -12,30 +17,53 @@ public class BurningRoom : MonoBehaviour
     private Collider _colliderMain;
     [SerializeField]
     private ParticleSystem _FbxSmoke, _fbxFire, _fbxPressurisedSteam;
+
+    [SerializeField]
+    private int _firePower = 20;
+    private float _decayRate,_fillAmount;
     private bool _isBurn = false;
+
+
+    [HideInInspector]
+    public bool IsThereIsAResident;
     private void Awake()
     {
+        _decayRate = 1f / _firePower;
+        _burningBar.gameObject.SetActive(false);
         _fbxPressurisedSteam.Stop();
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 4 && _isBurn)
         {
-            _fbxFire.transform.localScale = Vector3.Lerp(_fbxFire.transform.localScale, Vector3.zero, 0.1f);
-            if (_fbxFire.transform.localScale.x <= 0.1)
+            _fbxFire.transform.localScale -= new Vector3(_decayRate, _decayRate, _decayRate);
+            _burningBar.fillAmount -= _decayRate;
+            _firePower--;
+
+            if (_firePower <= 0)
             {
+                _inhabitant.Saved();
                 PutOut();
             }
         }
     }
     public void ActivationFair()
     {
+        _burningBar.gameObject.SetActive(true);
+
         _isBurn = true;
         _colliderMain.isTrigger = true;
         _window.enabled = false;
         _fbxFire.Play();
         _FbxSmoke.Play();
         _fbxPressurisedSteam.Stop();
+
+        if (IsThereIsAResident)
+        {
+            Inhabitant inhabitant = Instantiate(_inhabitant, transform.position, Quaternion.identity);
+            inhabitant.transform.SetParent(transform);
+            _inhabitant = inhabitant;
+        }
     }
     public void PutOut()
     {

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 59852185333339039}
   - component: {fileID: 59852185333339024}
+  - component: {fileID: 3208779565537864820}
   m_Layer: 0
   m_Name: FairManager
   m_TagString: Untagged
@@ -62,7 +63,19 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     ArsonisNamber: 0
-  _percentage: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  _lift: {fileID: 0}
   _timeBeforeArson: 2
   _arsonisNamber: 0
-  _percentageOfFireInTheUpperRoom: 20
+  _stupidInhabitants: 0
+--- !u!114 &3208779565537864820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59852185333339025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 540623896419639498a58d03513636f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
