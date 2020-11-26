@@ -636,6 +636,7 @@ MonoBehaviour:
   - {fileID: 1090216715722482562}
   - {fileID: 2862405135551384370}
   - {fileID: 4155884187518527321}
+  _progresBar: {fileID: 3007918006607237865}
 --- !u!114 &53239436367306458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1693,7 +1694,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3113192788224909805
 RectTransform:
   m_ObjectHideFlags: 0

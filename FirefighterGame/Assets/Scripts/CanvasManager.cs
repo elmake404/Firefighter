@@ -11,9 +11,11 @@ public class CanvasManager : MonoBehaviour
     private GameObject _menuUi, _gameUI, _winUi, _lostUI;
     [SerializeField]
     private Image[] _stars;
+    [SerializeField]
+    private Image _progresBar;
 
     private int _namberArreySrars = 0;
-    private float _fillStars, _numberStars, _receivedStars;
+    private float _fillStars,_fillProgres,_numberProgres,_receivedProgres, _numberStars, _receivedStars;
     private void Awake()
     {
         CanvasManagerMain = this;
@@ -42,6 +44,13 @@ public class CanvasManager : MonoBehaviour
                 _namberArreySrars++;
             }
         }
+
+        if (_numberProgres < _receivedProgres)
+        {
+            _numberProgres += 0.01f;
+
+            _progresBar.fillAmount += 0.01f;
+        }
     }
     void Update()
     {
@@ -60,12 +69,17 @@ public class CanvasManager : MonoBehaviour
             _lostUI.SetActive(true);
         }
     }
-    public void InitializationStars(int numberInhabitant)
+    public void InitializationFill(int numberInhabitant,int namberFloor)
     {
         _fillStars = 3f / numberInhabitant;
+        _fillProgres = 1f / namberFloor;
     }
     public void ResidentSaved()
     {
         _receivedStars += _fillStars;
+    }
+    public void ResidentFloor()
+    {
+        _receivedProgres += _fillProgres;
     }
 }
