@@ -796,12 +796,12 @@ PrefabInstance:
     - target: {fileID: 3478953367364925126, guid: 543b71139a2535c4d9d5115c26168a4a,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3478953367364925126, guid: 543b71139a2535c4d9d5115c26168a4a,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3478953367364925126, guid: 543b71139a2535c4d9d5115c26168a4a,
         type: 3}
@@ -820,22 +820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5753306661673655772, guid: 543b71139a2535c4d9d5115c26168a4a,
         type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 5753306661673655772, guid: 543b71139a2535c4d9d5115c26168a4a,
-        type: 3}
-      propertyPath: m_Type
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5753306661673655772, guid: 543b71139a2535c4d9d5115c26168a4a,
-        type: 3}
       propertyPath: m_FillOrigin
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5753306661673655772, guid: 543b71139a2535c4d9d5115c26168a4a,
-        type: 3}
-      propertyPath: m_FillAmount
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7252491003725926521, guid: 543b71139a2535c4d9d5115c26168a4a,
@@ -1474,12 +1459,12 @@ PrefabInstance:
     - target: {fileID: 3478953367364925126, guid: 543b71139a2535c4d9d5115c26168a4a,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3478953367364925126, guid: 543b71139a2535c4d9d5115c26168a4a,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3478953367364925126, guid: 543b71139a2535c4d9d5115c26168a4a,
         type: 3}
@@ -1498,22 +1483,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5753306661673655772, guid: 543b71139a2535c4d9d5115c26168a4a,
         type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 5753306661673655772, guid: 543b71139a2535c4d9d5115c26168a4a,
-        type: 3}
-      propertyPath: m_Type
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5753306661673655772, guid: 543b71139a2535c4d9d5115c26168a4a,
-        type: 3}
       propertyPath: m_FillOrigin
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5753306661673655772, guid: 543b71139a2535c4d9d5115c26168a4a,
-        type: 3}
-      propertyPath: m_FillAmount
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7252491003725926521, guid: 543b71139a2535c4d9d5115c26168a4a,
@@ -1761,12 +1731,12 @@ PrefabInstance:
     - target: {fileID: 3478953367364925126, guid: 543b71139a2535c4d9d5115c26168a4a,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3478953367364925126, guid: 543b71139a2535c4d9d5115c26168a4a,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3478953367364925126, guid: 543b71139a2535c4d9d5115c26168a4a,
         type: 3}
@@ -1785,22 +1755,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5753306661673655772, guid: 543b71139a2535c4d9d5115c26168a4a,
         type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 5753306661673655772, guid: 543b71139a2535c4d9d5115c26168a4a,
-        type: 3}
-      propertyPath: m_Type
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5753306661673655772, guid: 543b71139a2535c4d9d5115c26168a4a,
-        type: 3}
       propertyPath: m_FillOrigin
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5753306661673655772, guid: 543b71139a2535c4d9d5115c26168a4a,
-        type: 3}
-      propertyPath: m_FillAmount
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7252491003725926521, guid: 543b71139a2535c4d9d5115c26168a4a,
