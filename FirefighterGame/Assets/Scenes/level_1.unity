@@ -756,7 +756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3941f3080cea7c42a4d26463f15cf47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _topRightLimit: {x: 16.4, y: 0.8, z: 41.36}
+  _targetLest: []
   _speedNotBurning: 0.05
   _speedBurning: 0.005
 --- !u!114 &904201520 stripped
