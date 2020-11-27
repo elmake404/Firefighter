@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class BurningRoom : MonoBehaviour
 {
     [SerializeField]
+    private Transform _spawnPos;
+    [SerializeField]
     private Image _burningBar;
     [SerializeField]
     private Inhabitant _inhabitant;
@@ -87,12 +89,11 @@ public class BurningRoom : MonoBehaviour
         _colliderMain.isTrigger = true;
         _window.enabled = false;
         _fbxFire.Play();
-        _FbxSmoke.Play();
-        _fbxPressurisedSteam.Stop();
+        _FbxSmoke.Stop();
 
         if (IsThereIsAResident)
         {
-            Inhabitant inhabitant = Instantiate(_inhabitant, transform.position, Quaternion.identity);
+            Inhabitant inhabitant = Instantiate(_inhabitant, _spawnPos.position, Quaternion.identity);
             inhabitant.transform.SetParent(transform);
             _inhabitant = inhabitant;
         }
@@ -104,14 +105,13 @@ public class BurningRoom : MonoBehaviour
         _mainStage.ArsonisNamber--;
         _colliderMain.enabled = false;
         _fbxFire.Stop();
-        _FbxSmoke.Stop();
-        _fbxPressurisedSteam.Play();
+        _FbxSmoke.Play();
         StartCoroutine(StopSteem());
     }
     private IEnumerator StopSteem()
     {
         yield return new WaitForSeconds(5);
-        _fbxPressurisedSteam.Stop();
+        _FbxSmoke.Stop();
     }
     [ContextMenu("SearchComponent")]
     private void SearchComponent()
