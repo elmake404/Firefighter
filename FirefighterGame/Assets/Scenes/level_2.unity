@@ -1557,7 +1557,7 @@ PrefabInstance:
     - target: {fileID: 59852185333339024, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
         type: 3}
       propertyPath: _stupidInhabitants
-      value: 1
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 59852185333339025, guid: 47a3b4e251bf2e146990e3357d8dc8d2,
         type: 3}
