@@ -31,6 +31,7 @@ public class BurningRoom : MonoBehaviour
         _decayRate = 1f / _firePower;
         _burningBar.gameObject.SetActive(false);
         _fbxPressurisedSteam.Stop();
+        _fbxFire.gameObject.SetActive(false);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -50,6 +51,7 @@ public class BurningRoom : MonoBehaviour
     public void ActivationFair()
     {
         _burningBar.gameObject.SetActive(true);
+        _fbxFire.gameObject.SetActive(true);
 
         _isBurn = true;
         _colliderMain.isTrigger = true;
@@ -67,6 +69,8 @@ public class BurningRoom : MonoBehaviour
     }
     public void PutOut()
     {
+        _fbxFire.gameObject.SetActive(false);
+
         _mainStage.ArsonisNamber--;
         _colliderMain.enabled = false;
         _fbxFire.Stop();
