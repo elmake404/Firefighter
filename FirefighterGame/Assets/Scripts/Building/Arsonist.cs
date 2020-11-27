@@ -89,7 +89,7 @@ public class Arsonist : MonoBehaviour
 
         stupidInhabitants = stupidInhabitants <= MaxNamberStupid ? stupidInhabitants : MaxNamberStupid;
 
-        CanvasManager.CanvasManagerMain.InitializationStars(stupidInhabitants);
+        CanvasManager.CanvasManagerMain.InitializationFill(stupidInhabitants, _floors.Length);
 
         while (arsonisNumber > 0)
         {

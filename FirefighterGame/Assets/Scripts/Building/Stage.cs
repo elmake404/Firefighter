@@ -27,6 +27,7 @@ public class Stage : MonoBehaviour
             {
                 LevelManager.NamberStage++;
                 _arsonist.ActivationLift();
+                CanvasManager.CanvasManagerMain.ResidentFloor();
             }
         }
     }
