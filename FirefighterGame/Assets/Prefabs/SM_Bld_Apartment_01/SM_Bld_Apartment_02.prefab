@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _burningBar: {fileID: 2964883561092461071}
-  _inhabitant: {fileID: 3187759670457475326, guid: 6456c1adc3fc0c447b39ccbffe2a4e96,
+  _inhabitant: {fileID: 6360868751609366134, guid: baddff4c295ce6e4f8ac64735e4b3349,
     type: 3}
   _mainStage: {fileID: 3372525247732685811}
   _window: {fileID: 5741038354057942419}
@@ -533,7 +533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _burningBar: {fileID: 525167440716469772}
-  _inhabitant: {fileID: 3187759670457475326, guid: 6456c1adc3fc0c447b39ccbffe2a4e96,
+  _inhabitant: {fileID: 6360868751609366134, guid: baddff4c295ce6e4f8ac64735e4b3349,
     type: 3}
   _mainStage: {fileID: 3372525247732685811}
   _window: {fileID: 4304174246640819173}
@@ -747,7 +747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _burningBar: {fileID: 5801268670176453319}
-  _inhabitant: {fileID: 3187759670457475326, guid: 6456c1adc3fc0c447b39ccbffe2a4e96,
+  _inhabitant: {fileID: 6360868751609366134, guid: baddff4c295ce6e4f8ac64735e4b3349,
     type: 3}
   _mainStage: {fileID: 3372525247732685811}
   _window: {fileID: 1269291109717110957}

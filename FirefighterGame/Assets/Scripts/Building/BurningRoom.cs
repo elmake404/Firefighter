@@ -20,7 +20,8 @@ public class BurningRoom : MonoBehaviour
 
     [SerializeField]
     private int _firePower = 20;
-    private float _decayRate,_fillAmount;
+    private int _firePowerConst;
+    private float _decayRate, _fillburning, _reignitionTime, _delay;
     private bool _isBurn = false;
 
 
@@ -28,17 +29,46 @@ public class BurningRoom : MonoBehaviour
     public bool IsThereIsAResident;
     private void Awake()
     {
+        _firePowerConst = _firePower;
+        _fillburning = 1;
+        _delay = 0.1f;
         _decayRate = 1f / _firePower;
         _burningBar.gameObject.SetActive(false);
         _fbxPressurisedSteam.Stop();
         _fbxFire.gameObject.SetActive(false);
     }
+    private void FixedUpdate()
+    {
+        if (_firePower > 0)
+        {
+            if (_reignitionTime>0)
+            {
+                _reignitionTime -= 0.1f;
+            }
+            else if (_firePower < _firePowerConst)
+            {
+                if (_delay<=0)
+                {
+                    _delay = 0.1f;
+                    _fillburning += _decayRate;
+                    _fbxFire.transform.localScale += new Vector3(_decayRate, _decayRate, _decayRate);
+                    _firePower++;
+                }
+                else
+                {
+                    _delay -= Time.fixedDeltaTime;
+                }
+            }
+        }
+        _burningBar.fillAmount = Mathf.Lerp(_burningBar.fillAmount,_fillburning, 0.5f);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 4 && _isBurn)
         {
+            _reignitionTime = 0.5f;
             _fbxFire.transform.localScale -= new Vector3(_decayRate, _decayRate, _decayRate);
-            _burningBar.fillAmount -= _decayRate;
+            _fillburning -= _decayRate;
             _firePower--;
 
             if (_firePower <= 0)

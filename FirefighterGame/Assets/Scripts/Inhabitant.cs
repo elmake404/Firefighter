@@ -5,7 +5,7 @@ using UnityEngine;
 public class Inhabitant : MonoBehaviour
 {
     [SerializeField]
-    private MeshRenderer _meshRenderer;
+    private SkinnedMeshRenderer _meshRenderer;
     [SerializeField]
     private Color _newColor;
 
@@ -15,7 +15,8 @@ public class Inhabitant : MonoBehaviour
     void Start()
     {
         Material material = new Material(Shader.Find("Standard"));
-        material.color = _meshRenderer.material.color;
+        //material.color = _meshRenderer.material.color;
+        material.mainTexture = _meshRenderer.material.mainTexture;
         _meshRenderer.material = material;
         _isAlive = true;
         _isSaved = false;
