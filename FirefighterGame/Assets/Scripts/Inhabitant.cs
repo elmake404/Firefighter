@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Inhabitant : MonoBehaviour
 {
+    
     [SerializeField]
     private SkinnedMeshRenderer _meshRenderer;
     [SerializeField]
