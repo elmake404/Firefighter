@@ -31,7 +31,7 @@ public class Inhabitant : MonoBehaviour
             {
                 Debug.Log("red");
                 LevelManager.MaximumNumberOfDeadInhabitants--;
-                Debug.Log(LevelManager.MaximumNumberOfDeadInhabitants);
+                //Debug.Log(LevelManager.MaximumNumberOfDeadInhabitants);
                 _isAlive = false;
             }
         }
