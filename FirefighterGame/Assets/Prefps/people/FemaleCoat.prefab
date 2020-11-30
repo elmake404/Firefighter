@@ -350,10 +350,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.099909864
-  m_Height: 0.49954933
+  m_Radius: 0.06814966
+  m_Height: 0.29
   m_Direction: 1
-  m_Center: {x: 0, y: 0.24977466, z: 0}
+  m_Center: {x: 0, y: 0.15, z: -0.000000004167228}
 --- !u!54 &3681939524022957983
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1316,7 +1316,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.11984172
-  m_Center: {x: 0, y: 0.11984172, z: 0}
+  m_Center: {x: 0, y: 0.08, z: 0}
 --- !u!54 &8144520043589964770
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2248,10 +2248,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.09981084
-  m_Height: 0.4990542
+  m_Radius: 0.06814966
+  m_Height: 0.29
   m_Direction: 1
-  m_Center: {x: 0, y: 0.2495271, z: 0}
+  m_Center: {x: -0, y: 0.15, z: 0.000000004167228}
 --- !u!54 &6849386113336616877
 Rigidbody:
   m_ObjectHideFlags: 0
