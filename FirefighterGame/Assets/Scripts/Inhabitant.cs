@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Inhabitant : MonoBehaviour
 {
-    
+    [SerializeField]
+    private HangingMan _hangingMan;
     [SerializeField]
     private SkinnedMeshRenderer _meshRenderer;
     [SerializeField]
@@ -42,8 +43,11 @@ public class Inhabitant : MonoBehaviour
         if (_isAlive)
         {
             CanvasManager.CanvasManagerMain.ResidentSaved();
-            _meshRenderer.material.color = new Color(1, 1, 1);
+            //_meshRenderer.material.color = new Color(1, 1, 1);
+            
             _isSaved = true;
+            Instantiate(_hangingMan,transform.position,Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 }

@@ -1876,6 +1876,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af34ec4d94fd52044b538af9e4e60b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hangingMan: {fileID: 5377411420095187099, guid: 113fba06f30bdd34d99ce83f157a5556,
+    type: 3}
   _meshRenderer: {fileID: 8404966336874769681}
   _newColor: {r: 1, g: 0, b: 0, a: 1}
   _speed: 0.0035

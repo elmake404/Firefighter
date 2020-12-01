@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Hydrant : MonoBehaviour
 {
+    public static Hydrant HydrantMain;
+
     private Vector3 _startPosHydrant, _startPosAim;
     [SerializeField]
-    private Transform _aim, _posFair;
+    private Transform _aim, _posFair, _pointPositionInhabitans;
+    [SerializeField]
+    private Rigidbody _rightAttachmentPoint, _leftAttachmentPoint;
     [SerializeField]
     private ParticleSystem _FbxWater;
     [SerializeField]
@@ -14,6 +18,10 @@ public class Hydrant : MonoBehaviour
 
     [SerializeField]
     private float _forseWater, _factorDistance, _radiusFireplug;
+    private void Awake()
+    {
+        HydrantMain = this;
+    }
     void Start()
     {
         _startPosAim = _aim.transform.position;
@@ -26,10 +34,6 @@ public class Hydrant : MonoBehaviour
         {
             _FbxWater.Play();
         }
-        //else if (LevelManager.IsWinGame && _FbxWater.isPlaying)
-        //{
-
-        //}
 
         float posX = (_startPosAim.x - _aim.transform.position.x) * _factorDistance;
         Vector3 pos = new Vector3(_startPosHydrant.x + posX, _startPosHydrant.y, transform.position.z);
@@ -57,5 +61,16 @@ public class Hydrant : MonoBehaviour
             }
         }
     }
+    public void RescueOfInhabitants
+        (Rigidbody connectRight,Rigidbody connectLeft,Rigidbody newRightAttachmentPoint,Rigidbody newLeftAttachmentPoint ,Transform newPointPositionInhabitans,Transform Inhabitant)
+    {
+        Inhabitant.position = _pointPositionInhabitans.position;
+        Inhabitant.rotation = _pointPositionInhabitans.rotation;
+        _rightAttachmentPoint.gameObject.AddComponent<FixedJoint>().connectedBody=connectRight;
+        _leftAttachmentPoint.gameObject.AddComponent<FixedJoint>().connectedBody= connectLeft;
 
+        _pointPositionInhabitans = newPointPositionInhabitans;
+        _rightAttachmentPoint = newRightAttachmentPoint;
+        _leftAttachmentPoint = newLeftAttachmentPoint;
+    }
 }
